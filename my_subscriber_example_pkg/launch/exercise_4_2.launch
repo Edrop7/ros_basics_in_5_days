@@ -1,0 +1,5 @@
+<launch>
+    <!-- My Package launch file -->
+    <node pkg="my_subscriber_example_pkg" type="exercise_4_2.py" name="odometry_subscriber"  output="screen">
+    </node>
+</launch>
