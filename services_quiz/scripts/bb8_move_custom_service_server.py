@@ -25,13 +25,14 @@ def callback(request):
             pub.publish(velocity)
             counter = 0
             rate.sleep()
-            for i in range(100):
-                velocity.angular.z = 0.15707963267
+            for i in range(50):
+                velocity.angular.z = 0.3141592653
                 pub.publish(velocity)
                 rate.sleep()
-            velocity.angular.z = 0
+            velocity.angular.z = 0.0
             pub.publish(velocity)
             sides_completed += 1
+        sides_completed = 0
         num_of_squares_completed += 1
     velocity.linear.x = 0.0
     velocity.angular.z = 0.0
@@ -43,7 +44,7 @@ def callback(request):
     response.success = True
     return response
 
-rospy.init_node('service_move_bb8_in_square_custom_server') 
+rospy.init_node('service_move_bb8_in_square_custom_server')
 service = rospy.Service('/move_bb8_in_square_custom', BB8CustomServiceMessage, callback)
 pub = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
 velocity = Twist()
