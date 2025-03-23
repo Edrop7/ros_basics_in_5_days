@@ -5,7 +5,7 @@ import random
 import time
 
 # Options: DEBUG, INFO, WARN, ERROR, FATAL
-rospy.init_node('log_demo', log_level=rospy.WARN) #change the level of rospy.DEBUG for different views
+rospy.init_node('log_demo', log_level=rospy.DEBUG) #change the level of rospy.DEBUG for different views
 rate = rospy.Rate(0.5)
 
 #rospy.loginfo_throttle(120, "DeathStars Minute info: "+str(time.time()))
